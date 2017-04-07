@@ -1,5 +1,5 @@
 #!/bin/sh
 ###############################################################################
 if [[ $(acdcli upload /home/metalgeek/.local-encrypt/* /) = *upload complete* ]]; then
-  rm -rf /home/metalgeek/.local-encrypt/*
+  rm -rf /home/metalgeek/.local-decrypt/*
   fi
