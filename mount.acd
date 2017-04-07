@@ -1,0 +1,7 @@
+#!/bin/sh
+###############################################################################
+#echo .....eeeeENC5150=$encfspw
+/usr/local/bin/acd_cli mount /home/metalgeek/.acd-encrypt/
+ENCFS6_CONFIG="/home/metalgeek/.encfs6.xml" encfs --extpass="cat /home/metalgeek/.config/encfs/encfspw" /home/metalgeek/.acd-encrypt/ /home/metalgeek/.acd-decrypt/
+ENCFS6_CONFIG="/home/metalgeek/.encfs6.xml" encfs --extpass="cat /home/metalgeek/.config/encfs/encfspw" --reverse /home/metalgeek/.local-decrypt/ /home/metalgeek/.local-encrypt/
+unionfs-fuse -o cow -o allow_other /home/metalgeek/.local-decrypt/=RW:/home/metalgeek/.acd-decrypt/=RO /home/metalgeek/media

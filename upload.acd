@@ -1,0 +1,4 @@
+#!/bin/sh
+###############################################################################
+acd_cli upload /home/metalgeek/.local-decrypt/* /
+acd_cli sync
